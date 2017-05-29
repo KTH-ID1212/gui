@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.kth.id1212.gui.javafx.fxml.TextAdderController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Write a text line in the text field and click Add to add it." GridPane.columnSpan="2" GridPane.halignment="CENTER" />
+      <Label text="Text to add:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+      <TextField fx:id="textToAddField" onAction="#addHandler" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+         <tooltip>
+            <Tooltip text="Write text to add here" />
+         </tooltip></TextField>
+      <Button fx:id="addButton" mnemonicParsing="false" onAction="#addHandler" text="Add" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <tooltip>
+            <Tooltip text="Click to add text." />
+         </tooltip></Button>
+      <TextArea fx:id="allTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
+         <children>
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonHandler" text="OK">
+               <tooltip>
+                  <Tooltip text="Print all text to standard out" />
+               </tooltip></Button>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonHandler" text="Cancel">
+               <tooltip>
+                  <Tooltip text="Delete all entered text and terminate." />
+               </tooltip></Button>
+         </children>
+      </HBox>
+      <Text fx:id="numberOfAddedLinesText" strokeType="OUTSIDE" strokeWidth="0.0" text="$numberOfAddedLinesTextInitialLabel" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+   </children>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
+</GridPane>
